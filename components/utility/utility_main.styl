@@ -1,0 +1,23 @@
+@import "kouto-swiss"
+
+color()
+	if arguments == auto
+		if round(luminosity(@background)) == 1
+			color #000
+		else if round(luminosity(@background)) == 0
+			color #fff
+	else
+		color arguments
+
+String(str)
+	return ""+str+""
+
+print(str="waiting for input")
+	html
+		&:before
+			content:(str)
+			display:block;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:9999;

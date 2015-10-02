@@ -4,7 +4,11 @@ var watcher = require("chokidar"),
 		path = require("path"),
 		fs = require("fs"),
 		color = require("colors"),
-		mainJson = require(path.join(__root,"package.json"))
+		mainJson = require(path.join(__root,"package.json")),
+		font_components = api.core.componentSchema.font_components,
+		cp = require('ncp').ncp
+
+cp.limit = 16;
 
 var load_settings = path.join(__root,"load.json")
 
@@ -20,6 +24,13 @@ module.exports = function(){
 		.on('change',watch_load_json)
 	watcher.watch(api.core.getPath("src"))
 		.on('change',watch_files)
+
+	for(i in font_components){
+		var font_component_path = path.join(__root,"components",font_components[i])
+		watcher.watch(font_component_path)
+			.on("add",update_fonts)
+	}
+
 }
 
 function watch_load_json(event, path){
@@ -35,4 +46,20 @@ function watch_files(path,evt){
 	if(path.split(".").pop()=="styl") require('./locals.js')(function(){
 		console.log(color.yellow("Compile changes >",path.split("/").pop()))
 	})
+}
+
+function update_fonts(font_path,evt){
+	if(font_path.split(".").pop()=='ttf'){
+		var namespace = path.resolve(font_path,"../").split("/").pop(),
+				dest = path.join(api.core.getPath("dist"),"style","compressed","fonts",namespace),
+				src = path.resolve(font_path,"../")
+
+		fs.readdir(dest,function(err,res){
+			cp(src,dest,function(err){
+				if(err) console.log(err)
+				else console.log(color.yellow("Copying font "+namespace+" > to dist"))
+			})
+		})
+
+	}
 }

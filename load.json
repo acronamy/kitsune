@@ -12,7 +12,8 @@
 		"notify",
 		"reset",
 		"tables",
-		"typography"
+		"typography",
+		"icons"
 	],
 	"convention_schema":{
 		"component":{
@@ -21,7 +22,8 @@
 				"main":"@{component}_main.styl",
 				"readme":"@{component}_readme.md"
 			},
-			"folders":["scripts","example"]
+			"folders":["scripts","example"],
+			"font_components":["typography","icons"]
 		},
 		"core":["components","utilities","dist","core"],
 		"dist":{
