@@ -1,0 +1,142 @@
+use = json('grid_schema.json',{hash:true})
+
+col(unit=1)
+	if unit >= use.config.nth
+		unit = use.config.nth
+	base = unit(100/use.config.nth,"%")
+	width:base * unit;
+	padding-left: unit(use.config.padding,"px");
+	padding-right: unit(use.config.padding,"px");
+	box-sizing:border-box;
+	float:left;
+	min-height:1px;
+	position: relative;
+
+col-offset(unit=1)
+	if unit >= use.config.nth
+		unit = use.config.nth
+	base = unit(100/use.config.nth,"%")
+	margin-left:base * unit;
+	float:left;
+
+media(keyword=String(keyword))
+	&
+		if keyword == use.keywords.xs
+			@media screen and (min-width:unit(use.media.xs,"px"))
+				{block}
+	&
+		if keyword == use.keywords.sm
+			@media screen and (min-width:unit(use.media.sm,"px"))
+				{block}
+	&
+		if keyword == use.keywords.md
+			@media screen and (min-width:unit(use.media.md,"px"))
+				{block}
+	&
+		if keyword == use.keywords.lg
+			@media screen and (min-width:unit(use.media.lg,"px"))
+				{block}
+
+
+//col
+c_range = 1..use.config.nth
+//xs - to - lg
+for class in use.classes
+	for n in c_range
+		.col-{class}-{n}
+			if class == 'xs'
+				+media(mobile)
+					col(n)
+			if class == 'sm'
+				+media(tablet)
+					col(n)
+			if class == 'md'
+				+media(desktop)
+					col(n)
+			if class == 'lg'
+				+media(wide)
+					col(n)
+
+//offset
+c_range = 0..use.config.nth
+//xs - to - lg
+for class in use.classes
+	for n in c_range
+		.col-{class}-offset-{n}
+			if class == 'xs'
+				+media(mobile)
+					col-offset(n)
+			if class == 'sm'
+				+media(tablet)
+					col-offset(n)
+			if class == 'md'
+				+media(desktop)
+					col-offset(n)
+			if class == 'lg'
+				+media(wide)
+					col-offset(n)
+
+//display/hide
+c_range = 0..use.config.nth
+//xs - to - lg
+for class in use.classes
+	for n in c_range
+		.col-{class}-hidden
+			if class == 'xs'
+				+media(mobile)
+					display:none;
+				+media(tablet)
+					display:block;
+				+media(desktop)
+					display:block;
+				+media(wide)
+					display:block;
+
+			if class == 'sm'
+				+media(mobile)
+					display:none;
+				+media(tablet)
+					display:none;
+				+media(desktop)
+					display:block;
+				+media(wide)
+					display:block;
+
+			if class == 'md'
+				+media(mobile)
+					display:none;
+				+media(tablet)
+					display:none;
+				+media(desktop)
+					display:none;
+				+media(wide)
+					display:block;
+
+			if class == 'lg'
+				+media(mobile)
+					display:none;
+				+media(tablet)
+					display:none;
+				+media(desktop)
+					display:none;
+				+media(wide)
+					display:none;
+
+.container,
+.conteiner-fluid
+	clear:both;
+	min-height:1px;
+	position:relative;
+	display:block;
+	padding-left: unit(use.config.padding,"px");
+	padding-right: unit(use.config.padding,"px");
+	.row
+		margin-left: -(unit(use.config.padding,"px"));
+		margin-right: -(unit(use.config.padding,"px"));
+
+.container
+	margin:0 auto;
+	max-width:980px;
+
+.conteiner-fluid
+	width:100%;

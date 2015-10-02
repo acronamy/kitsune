@@ -1,0 +1,15 @@
+{
+  "name": "kitsune",
+  "version": "1.0.0",
+  "description": "kitsune is the Stylus css & js framework with the view to be highly community driven & extensible, components will be interchangeable and you will be able to manage the entire src via a nwjs app or dedicated small app on server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Adam Crockett",
+  "license": "ISC",
+  "dependencies": {
+    "stylus-normalize": "^3.0.3"
+  }
+}
