@@ -1,5 +1,6 @@
 {
 	"component_list":[
+		"utility",
 		"button",
 		"dropdown",
 		"form",
@@ -11,8 +12,7 @@
 		"notify",
 		"reset",
 		"tables",
-		"typography",
-		"_utility"
+		"typography"
 	],
 	"convention_schema":{
 		"component":{

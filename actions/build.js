@@ -2,13 +2,14 @@
 var fs = require('fs'),
 		api = require("../developer/api/api_index.js"),
 		__root = api.core.getRoot,
-		path = require("path")
+		path = require("path"),
+		color = require("colors")
 
 module.exports = function(changes){
-	if(changes){//watch task
+	if(changes){//watch task, did changes happen?
 		install_components(changes)
 	}
-	make_install_dir(function(){
+	make_install_dir(function(){//run make install then run locals
 		require('./locals.js')()
 	})
 }
@@ -22,22 +23,31 @@ function make_install_dir(cb){
 	cb()
 }
 
-function install_components(changes){
-	var mainStylIndex = path.join(__root,"kitsune.styl")//Update main file
+function install_components(changes){//if changes happen do this
+	var mainStylIndex = path.join(__root,"kitsune.styl")//Update main styl index file
 	if(!changes) var install_dir = api.core.componentList
 	else var install_dir = changes
+	//install dir will equate to an array of components that will all be passed
+
+	//read components before we do anything
+	var component_initial = fs.readdirSync(path.join(__root,"components"))
+
 	for(i in install_dir){
+		//for each component in this array
 		require("./build/importList.js")(install_dir[i])//update style main index
+
+		//path to write if doesnt exist already
 		var __install_paths = path.join(__root,"components",install_dir[i])
-		require("./build/mkDir.js")(__install_paths,populate_components)
+		require("./build/mkDir.js")(__install_paths,populate_components,component_initial)//make a dir and populate with components
 	}
 }
 
-function populate_components(){
+function populate_components(pre_state){
 	fs.readdir(path.join(__root,"components"),function(err,res){
 		for(i in res){
+			//compair
 			var __full_path = path.join(__root,"components",res[i])
-			read_dir_scheam(res[i], __full_path)
+			if(pre_state.indexOf(res[i]) === -1) read_dir_scheam(res[i], __full_path)
 		}
 	})
 }
