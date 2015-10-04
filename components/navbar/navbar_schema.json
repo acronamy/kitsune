@@ -1,0 +1,13 @@
+{
+		"selector": {
+				"default": "navbar-nav",
+				"stub": "navbar-short",
+				"fixed-top": "navbar-fixed-top",
+				"fixed-bottom": "navbar-fixed-bottom"
+		},
+		"size": {
+				"xs": "35px",
+				"sm": "45px",
+				"lg": "75px"
+		}
+}

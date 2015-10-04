@@ -10,7 +10,6 @@ module.exports = function(cb){
 fs.readFile(path.join(api.core.getPath("kitsune_style")), 'utf8',function(err,res){
 	if(err) write_kitsune()
 	stylus(res)
-		.use(libs.normalize())
 		.use(libs.koutoSwiss())
 		.render(read_kitsune)
 })

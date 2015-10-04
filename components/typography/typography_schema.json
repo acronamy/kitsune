@@ -1,1 +1,13 @@
-{}
+{
+	"font_family":["Oxygen","./fonts/oxygen/Oxygen-Regular","normal"],
+	"category":"sans-serif",
+	"typesettings":true,
+	"typesettings_config":{
+		"modular_scale":1.414,
+		"base_v_unit":6,
+		"base_line_multi":4,
+		"base-font-size":16,
+		"paragraph_indent":true,
+		"paragraph_justify":true
+	}
+}

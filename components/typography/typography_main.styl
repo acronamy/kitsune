@@ -1,5 +1,33 @@
 use = json('./typography_schema.json',{hash:true})
-font-face("Oxygen","./oxygen/Oxygen-Regular",normal)
+font-face(use.font_family[0],use.font_family[1],use.font_family[2])
 
-h1
-	font-family: 'Oxygen', sans-serif;
+body
+	background-color:#fff;
+	color:auto;
+	font-family:'Oxygen',use.category;
+
+font-debug()
+	background-color:rgba(255,0,0,.1);
+
+//configure in typography schema.
+if use.typesettings
+	$ms-ratio:= use.typesettings_config.modular_scale;
+	$base-vertical-unit:= unit(use.typesettings_config.base_v_unit,"px");
+	$base-line-multi:= use.typesettings_config.base_line_multi;
+	$base-font-size:= unit(use.typesettings_config.base-font-size,"px");
+	$paragraph-indent:= use.typesettings_config.paragraph_indent;
+	$paragraph-justify:= use.typesettings_config.paragraph_justify;
+	@import 'type_settings'
+
+for n in 1 ..6
+	h{n}.hr,
+	.h{n}.hr
+		display:flex;
+		flex:2;
+		vertical-align:middle;
+		width:100%;
+		&:after
+			content:"";
+			flex:1;
+			width:100%;
+			border-bottom:.1em solid;

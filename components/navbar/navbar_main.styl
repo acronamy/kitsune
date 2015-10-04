@@ -1,0 +1,13 @@
+use = json('./navbar_schema.json',{hash:true})
+
+navbar(_height=50px)
+	&
+		height:rem(_height);
+		background:red;
+
+//default
+.{unquote(use.selector.default)}
+	navbar()
+
+.{unquote(use.selector.stub)}
+	navbar()
