@@ -1,13 +1,20 @@
 use = json('./navbar_schema.json',{hash:true})
 
-navbar(_height=50px)
+navbar(_height)
 	&
 		height:rem(_height);
 		background:red;
 
-//default
-.{unquote(use.selector.default)}
-	navbar()
+//use set to reference the selector key of your json file
+//this returns a block mixin of that keys value as a class
++set("default")
+	navbar(use.size.medium)
 
-.{unquote(use.selector.stub)}
-	navbar()
++set("fixed-top")
+	navbar(use.size.medium)
+
++set("fixed-bottom")
+	navbar(use.size.medium)
+
++set("stub")
+	navbar(use.size.medium)

@@ -1,4 +1,7 @@
+@charset "utf8"
 @import "kouto-swiss"
+normalize()
+
 
 color()
 	if arguments == auto
@@ -21,3 +24,7 @@ print(str="waiting for input")
 			top:0;
 			left:0;
 			z-index:9999;
+
+set(key)
+	.{unquote(use.selector[key])}
+		{block}

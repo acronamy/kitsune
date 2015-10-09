@@ -6,8 +6,9 @@
 				"fixed-bottom": "navbar-fixed-bottom"
 		},
 		"size": {
-				"xs": "35px",
-				"sm": "45px",
-				"lg": "75px"
+				"skinny": "35px",
+				"small": "45px",
+				"medium":"50px",
+				"large": "75px"
 		}
 }

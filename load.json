@@ -1,19 +1,20 @@
 {
 	"component_list":[
 		"utility",
+		"grid",
 		"button",
 		"dropdown",
 		"form",
-		"grid",
 		"hero",
-		"icons",
+		"g_color",
 		"modal",
 		"navbar",
 		"notify",
 		"reset",
 		"tables",
 		"typography",
-		"icons"
+		"icons",
+		"sounds"
 	],
 	"convention_schema":{
 		"component":{
