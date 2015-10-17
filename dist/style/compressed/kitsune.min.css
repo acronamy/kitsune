@@ -2594,6 +2594,11 @@ h6.hr:after,
   background-color: rgba(255,255,255,0);
   text-transform: uppercase;
 }
+.btn.primary.ghost {
+  color: #4074c3;
+  background-color: rgba(255,255,255,0);
+  border: 0.125rem solid;
+}
 .btn.info {
   color: #fff;
   background-color: #6aad28;
@@ -2603,6 +2608,11 @@ h6.hr:after,
   color: #6aad28;
   background-color: rgba(255,255,255,0);
   text-transform: uppercase;
+}
+.btn.info.ghost {
+  color: #6aad28;
+  background-color: rgba(255,255,255,0);
+  border: 0.125rem solid;
 }
 .btn.warn {
   color: #fff;
@@ -2614,6 +2624,11 @@ h6.hr:after,
   background-color: rgba(255,255,255,0);
   text-transform: uppercase;
 }
+.btn.warn.ghost {
+  color: #ef6c00;
+  background-color: rgba(255,255,255,0);
+  border: 0.125rem solid;
+}
 .btn.danger {
   color: #fff;
   background-color: #d84315;
@@ -2624,6 +2639,11 @@ h6.hr:after,
   background-color: rgba(255,255,255,0);
   text-transform: uppercase;
 }
+.btn.danger.ghost {
+  color: #d84315;
+  background-color: rgba(255,255,255,0);
+  border: 0.125rem solid;
+}
 .btn.trans {
   color: #000;
   background-color: rgba(255,255,255,0);
@@ -2631,11 +2651,48 @@ h6.hr:after,
   -webkit-box-shadow: initial;
   box-shadow: initial;
 }
+.btn.ghost {
+  color: #000;
+  background-color: rgba(255,255,255,0);
+  border: 0.125rem solid;
+}
+.btn.ghost.dark {
+  color: #fff;
+}
 .btn.sm {
   font-size: 0.8em;
 }
 .btn.lg {
   font-size: 1.2em;
+}
+.btn-group .btn {
+  border-radius: 0;
+  border-left: 0;
+}
+.btn-group .btn:first-child {
+  border-left: 0.063rem solid #c5c5c5;
+  border-top-left-radius: 0.188rem;
+  border-bottom-left-radius: 0.188rem;
+}
+.btn-group .btn:first-child.round {
+  border-top-left-radius: 9999em;
+  border-bottom-left-radius: 9999em;
+}
+.btn-group .btn:last-child {
+  border-top-right-radius: 0.188rem;
+  border-bottom-right-radius: 0.188rem;
+}
+.btn-group .btn:last-child.round {
+  border-top-right-radius: 9999em;
+  border-bottom-right-radius: 9999em;
+}
+.btn-group.round .btn:first-child {
+  border-top-left-radius: 9999em;
+  border-bottom-left-radius: 9999em;
+}
+.btn-group.round .btn:last-child {
+  border-top-right-radius: 9999em;
+  border-bottom-right-radius: 9999em;
 }
 .menu-toggle {
   max-height: initial;

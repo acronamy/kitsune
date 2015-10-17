@@ -47,6 +47,7 @@
 		.col-md-3
 			img.tri
 .container
+	h4 Buttons
 	.card
 		h5 Normal
 		button.btn(type='button') Cancel
@@ -55,12 +56,40 @@
 		button.btn.warn(type='button') Warning
 		button.btn.danger(type='button') Danger
 	.card
+		h5 Round
+		button.btn.round(type='button') Cancel
+		button.btn.primary.round(type='button') Primary
+		button.btn.info.round(type='button') Informative
+		button.btn.warn.round(type='button') Warning
+		button.btn.danger.round(type='button') Danger
+	.card
 		h5 Transparent
 		button.btn.trans(type='button') Cancel
 		button.btn.primary.trans(type='button') Primary
 		button.btn.info.trans(type='button') Informative
 		button.btn.warn.trans(type='button') Warning
 		button.btn.danger.trans(type='button') Danger
+	.card
+		h5 Ghosts
+		button.btn.ghost(type='button') Cancel
+		button.btn.primary.ghost(type='button') Primary
+		button.btn.info.ghost(type='button') Informative
+		button.btn.warn.ghost(type='button') Warning
+		button.btn.danger.ghost(type='button') Danger
+	h4 Button Groups
+	.card
+		h5 Normal
+		.btn-group
+			button.btn(type='button') Left
+			button.btn(type='button') Center
+			button.btn(type='button') Right
+	.card
+		h5 Round
+		p Supports both .round on parent or child all children.
+		.btn-group.round
+			button.btn(type='button') Left
+			button.btn(type='button') Center
+			button.btn(type='button') Right
 
 .container
 	.row-reset

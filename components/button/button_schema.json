@@ -7,13 +7,16 @@
 		"danger":"danger",
 		"transparent":"trans",
 		"round":"round",
+		"ghost":"ghost",
 		"sm":"sm",
 		"md":"md",
-		"lg":"lg"
+		"lg":"lg",
+		"group_default":"btn-group"
 	},
 	"config":{
 		"roundness":"3px",
-		"padding":".3em 1.2em"
+		"padding":".3em 1.2em",
+		"border_default_color":"#c5c5c5"
 	},
 	"color":{
 		"default":"#f5f5f5",
