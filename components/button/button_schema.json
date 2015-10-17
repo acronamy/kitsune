@@ -1,0 +1,35 @@
+{
+	"selector":{
+		"default":"btn",
+		"primary":"primary",
+		"informative":"info",
+		"warning":"warn",
+		"danger":"danger",
+		"transparent":"trans",
+		"round":"round",
+		"sm":"sm",
+		"md":"md",
+		"lg":"lg"
+	},
+	"config":{
+		"roundness":"3px",
+		"padding":".3em 1.2em"
+	},
+	"color":{
+		"default":"#f5f5f5",
+		"primary":"#4074c3",
+		"informative":"#6aad28",
+		"warning":"#EF6C00",
+		"danger":"#D84315",
+		"transparent":"rgba(255,255,255,0)"
+	},
+	"shine":{
+		"enabled":false,
+		"strength":0.36
+	},
+	"sizes":{
+		"sm":".8em",
+		"md":"1em",
+		"lg":"1.2em"
+	}
+}

@@ -1,0 +1,24 @@
+use = json('hero_schema.json',{hash:true})
+
++set("default")
+	min-height:use.sizes.default;
+	&.{use.selector.skinny}
+		min-height:use.sizes.skinny;
+	&.{use.selector.small}
+		min-height:use.sizes.small;
+	&.{use.selector.medium}
+		min-height:use.sizes.medium;
+	&.{use.selector.large}
+		min-height:use.sizes.large;
+	&.{use.selector.full}
+		min-height:use.sizes.full;
+	background-image:use.placeholder;//before styled
+	padding:2em 0;
+	width:100%;
+	+try("display","flex",use.flexbox)
+		display:flex;
+		align-items:center;
+		&>div
+			width:grid_container_width;
+	&>*
+		font-size:1.2em;

@@ -122,11 +122,12 @@ for class in use.classes
 				+media(wide)
 					display:none;
 
-.row
-	clearfix()
+//expose with other components
+grid_container_width = unit(use.container,'px')
+grid_container_fluid_width = unit(100,"%")
+baseline_row = 25
 
-.container,
-.conteiner-fluid
+container_common()
 	clear:both;
 	clearfix()
 	min-height:1px;
@@ -134,13 +135,22 @@ for class in use.classes
 	display:block;
 	padding-left: unit(use.config.padding,"px");
 	padding-right: unit(use.config.padding,"px");
-	.row
+	+set("reset_row")
 		margin-left: -(unit(use.config.padding,"px"));
 		margin-right: -(unit(use.config.padding,"px"));
 
-.container
+make_container(mode='default')
+	container_common()
 	margin:0 auto;
-	max-width:980px;
+	if mode == "fluid"
+		width:100%;
+	else
+		max-width:unit(use.container,'px');
 
-.conteiner-fluid
-	width:100%;
+//aliased selectors
++set("reset_row")
+	clearfix()
++set("fluid_container")
+	make_container("fluid")
++set("container")
+	make_container()

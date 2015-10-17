@@ -1,0 +1,28 @@
+use = json('image_tools_schema.json',{hash:true})
+//blanks
+img[src=''],
+img:not(src)
+	background-color:#fafafa;
+	background-image:use.placeholder;
+	outline:0;
+	height:0;
+	width:100%;
+	padding-bottom:100%;
+	border-radius:4px;
+
+img
+	if use.styles.enabled.round
+		&.round
+			border-radius:9999em!important;
+	if use.styles.enabled.hexagon
+		&.hex
+			-webkit-clip-path:polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+			clip-path:polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+	if use.styles.enabled.triangle
+		&.tri
+			-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+			clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+img.fit
+	width:100%;
+	height:auto;

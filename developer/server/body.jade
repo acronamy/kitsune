@@ -1,15 +1,70 @@
-.navbar-nav
-.navbar-short
+.navbar-fixed-top.navbar-small
+	.container
+		buton(type='button').btn.trans.menu-toggle
+			span.line-bar
+			span.line-bar.crossbar-parent
+				span.line-bar.crossbar
+			span.line-bar
+		p.brand-text Kitsune
+		ul.nav
+			li.active
+				a(href='#') Foo
+			li
+				a(href='#') Foo
+			li
+				a(href='#') Foo
+			li
+				a(href='#') Foo
+
+.hero.large.shade
+	.container
+		.row-reset
+			.col-md-6
+				h1 Kitsune
+				p.hr Kitsune is the Json & Stylus centric Css Js factory with the beating heart of community in mind.
+				button.btn.primary(type='button') Primary Hero
+
 .container
-	.row
-		.col-md-9
-			h1 Please be kind to Sam and Lizzie.
-			h2 Kitsune please
-			h3 Kitsune please
-			h4 Kitsune please
-			h5 Kitsune please
-		.col-md-3
+	.row-reset
+		.col-md-6
+			h1 Heading H1.
+			h2 Heading H2.
+			h3 Heading H3.
+			h4 Heading H4.
+			h5 Heading H5.
+		.col-md-6
 			p
 				|Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			a(href='#') Foo
+		header.col-md-12
+			h4 Image prototyping.
+		.col-md-3
+			img
+		.col-md-3
+			img.round
+		.col-md-3
+			img.hex
+		.col-md-3
+			img.tri
 .container
-	button.button(type='button') Button
+	.card
+		h5 Normal
+		button.btn(type='button') Cancel
+		button.btn.primary(type='button') Primary
+		button.btn.info(type='button') Informative
+		button.btn.warn(type='button') Warning
+		button.btn.danger(type='button') Danger
+	.card
+		h5 Transparent
+		button.btn.trans(type='button') Cancel
+		button.btn.primary.trans(type='button') Primary
+		button.btn.info.trans(type='button') Informative
+		button.btn.warn.trans(type='button') Warning
+		button.btn.danger.trans(type='button') Danger
+
+.container
+	.row-reset
+		.col-md-6
+			h4 Cards and Buckets
+			.card
+				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.

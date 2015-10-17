@@ -2,6 +2,7 @@
 	"component_list":[
 		"utility",
 		"grid",
+		"typography",
 		"button",
 		"dropdown",
 		"form",
@@ -12,8 +13,9 @@
 		"notify",
 		"reset",
 		"tables",
-		"typography",
 		"icons",
+		"image_tools",
+		"cards",
 		"sounds"
 	],
 	"convention_schema":{

@@ -1,0 +1,76 @@
+use = json('./button_schema.json',{hash:true})
+
++set("default")
+	if use.shine.enabled
+		box-shadow:inset 0 1px rgba(255,255,255,use.shine.strength);
+		text-shadow: 0 1px rgba(255,255,255,use.shine.strength);
+	background-color:#f5f5f5;
+	border:rem(1px) solid #c5c5c5;
+	border-radius:rem(use.config.roundness);
+	padding:use.config.padding;
+	outline:0;
+	color:auto;
+	font-size:use.sizes.md;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+	&.{use.selector.round}
+		border-radius:9999em;
+	&.{use.selector.primary}
+		color:auto;
+		background-color:use.color.primary;
+		border:rem(1px) solid saturation(@background-color,50%);
+		&.{use.selector.transparent}
+			color:@background-color;
+			background-color:use.color.transparent;
+			text-transform:uppercase;
+	&.{use.selector.informative}
+		color:auto;
+		background-color:use.color.informative;
+		border:rem(1px) solid saturation(@background-color,50%);
+		&.{use.selector.transparent}
+			color:@background-color;
+			background-color:use.color.transparent;
+			text-transform:uppercase;
+	&.{use.selector.warning}
+		color:auto;
+		background-color:use.color.warning;
+		border:rem(1px) solid saturation(@background-color,50%);
+		&.{use.selector.transparent}
+			color:@background-color;
+			background-color:use.color.transparent;
+			text-transform:uppercase;
+	&.{use.selector.danger}
+		color:auto;
+		background-color:use.color.danger;
+		border:rem(1px) solid saturation(@background-color,50%);
+		&.{use.selector.transparent}
+			color:@background-color;
+			background-color:use.color.transparent;
+			text-transform:uppercase;
+	&.{use.selector.transparent}
+		color:auto;
+		background-color:use.color.transparent;
+		border:rem(1px) solid saturation(@background-color,50%);
+		box-shadow:initial;
+	&.{use.selector.sm}
+		font-size:use.sizes.sm;
+	&.{use.selector.lg}
+		font-size:use.sizes.lg;
+
+//navbar menu toggle
+.menu-toggle
+	max-height:initial;
+	height:initial;
+	width:rem(50px);
+	span.line-bar
+		margin-top:rem(3px);
+		display:block;
+		height:rem(2px);
+		width:100%;
+		background-color:#000;
+		.crossbar
+			margin-top:0;
+	+try('display','flex',true)
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;

@@ -1,0 +1,10 @@
+{
+	"styles":{
+		"enabled":{
+			"round":true,
+			"hexagon":true,
+			"triangle":true
+		}
+	},
+	"placeholder":"url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQIW2NkYGAwZmBgOMsABYwwBjYBsEoMFQBQhgIFTA5z/AAAAABJRU5ErkJggg==')"
+}

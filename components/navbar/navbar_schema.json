@@ -3,12 +3,33 @@
 				"default": "navbar-nav",
 				"stub": "navbar-short",
 				"fixed-top": "navbar-fixed-top",
-				"fixed-bottom": "navbar-fixed-bottom"
+				"fixed-bottom": "navbar-fixed-bottom",
+				"skinny":"navbar-skinny",
+				"small":"navbar-small",
+				"medium":"navbar-medium",
+				"large":"navbar-large"
 		},
 		"size": {
 				"skinny": "35px",
 				"small": "45px",
 				"medium":"50px",
 				"large": "75px"
+		},
+		"flexbox":true,
+		"roundness":4,
+		"border":"#e6e6e6",
+		"active_accent":{
+			"size":4
+		},
+		"color":{
+			"bg":"#f5f5f5",
+			"text":"#030303",
+			"link":"#2c2c2c",
+			"active_accent":"#4074c3"
+		},
+		"accent_bar":{
+			"enabled":false,
+			"size":2,
+			"color":"#4074c3"
 		}
 }

@@ -2,19 +2,160 @@ use = json('./navbar_schema.json',{hash:true})
 
 navbar(_height)
 	&
-		height:rem(_height);
-		background:red;
+		min-height:rem(_height);
+		background-color:use.color.bg;
+		margin-bottom:rem(unit(baseline_row,'px'));
+		border:rem(1px) solid use.border;
+		overflow-x:auto;
+		overflow-y:hidden;
+		+text()
+			vertical-align:-webkit-baseline-middle;
+			margin-bottom:0;
+			display:inline-block;
+		&.trans,
+		&.trans.inverse
+			background-color:rgba(255,255,255,0);
+			border:0;
+			font-weight:bold;
+		&.trans.inverse
+			background-color:transparentify(invert(use.color.bg),.9);
+		&.inverse
+			background-color:invert(use.color.bg);
+			color:invert(use.color.text);
+			border:0;
+			[class^='container']
+				.nav
+					li
+						a
+							color:invert(use.color.link);
+						&:hover,
+						&.active
+							a
+								color:lighten(invert(use.color.link),100%);
+
+navbar_fixed()
+	border-radius:0!important;
+	position:fixed;
+	width:100%;
+	z-index:500;
+
+navbar_variation()
+	&.{use.selector.skinny}
+		font-size:.8em;
+		min-height:unit(use.size.skinny,"px");
+		line-height:2.5em;
+		+try('display','flex',use.flexbox)
+			max-height:@min-height;
+	&.{use.selector.small}
+		font-size:.9em;
+		line-height:3em;
+		min-height:unit(use.size.small,"px");
+		+try('display','flex',use.flexbox)
+			max-height:@min-height;
+	&.{use.selector.medium}
+		font-size:.92em;
+		line-height:3.2em;
+		min-height:unit(use.size.medium,"px");
+		+try('display','flex',use.flexbox)
+			max-height:@min-height;
+	&.{use.selector.large}
+		font-size:.9em;
+		line-height:4.9em;
+		min-height:unit(use.size.large,"px");
+		+try('display','flex',use.flexbox)
+			max-height:@min-height;
+
 
 //use set to reference the selector key of your json file
 //this returns a block mixin of that keys value as a class
 +set("default")
 	navbar(use.size.medium)
+	navbar_variation()
 
 +set("fixed-top")
 	navbar(use.size.medium)
+	navbar_fixed()
+	if use.accent_bar.enabled
+		border-top:rem(use.accent_bar.size) solid use.accent_bar.color!important;
+	top:0;
+	left:0;
+	navbar_variation()
+	//any of next el to fix size
+	&+*:not(.hero)
+		margin-top:em(70px);
+
+	//if fixed correct hero to make it flush
+	&.{use.selector.skinny}
+		&+.hero
+			margin-top:em(use.size.skinny);
+	&.{use.selector.small}
+		&+.hero
+			margin-top:em(use.size.small);
+	&.{use.selector.medium}
+		&+.hero
+			margin-top:em(use.size.medium);
+	&.{use.selector.large}
+		&+.hero
+			margin-top:em(use.size.large);
 
 +set("fixed-bottom")
 	navbar(use.size.medium)
+	navbar_fixed()
+	navbar_variation()
+	bottom:0;
+	left:0;
+	margin-bottom:0!important;
 
 +set("stub")
 	navbar(use.size.medium)
+	navbar_variation()
+	width:grid_container_width;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:rem(unit(baseline_row,'px'));
+	margin-bottom:rem(unit(baseline_row,'px'));
+	border-radius:rem(unit(use.roundness,'px'));
+
+if use.accent_bar.enabled
+	html
+		border-top:rem(unit(use.accent_bar.size,"px")) solid use.accent_bar.color;
+		body
+			+set("stub")
+				margin-top:rem(unit(baseline_row,'px'));
+
+[class^='navbar-']
+	+try('display','flex',use.flexbox)//flex mode
+		@import './navbar_flexbox_main.styl'
+	[class^='container']
+		min-height:inherit;
+		//fallback
+		.brand-text
+			float:left;
+			display:table-cell;
+			vertical-align:middle;
+			min-height:inherit;
+			margin-right:1em;
+		.nav
+			float:left;
+			min-height:@min-height;
+			margin:0;
+			padding:0;
+			display:table;
+			padding-left:1em;
+			padding-right:@padding-left;
+			li
+				display:table-cell;
+				vertical-align:middle;
+				padding-left:@padding-right;
+				padding-right:@padding-left;
+				&.active
+					background-image: linear-gradient( to top, use.color.active_accent, use.color.active_accent)
+					background-repeat-y:no-repeat;
+					background-size:rem(use.active_accent.size+1px);
+					background-position:bottom;
+				&:hover,
+				&.active
+					a
+						color:darken(use.color.link,100%);
+				a
+					color:use.color.link;

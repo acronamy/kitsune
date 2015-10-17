@@ -1,0 +1,11 @@
+{
+		"white": {
+				"500": "#ffffff",
+				"text": "#ffffff",
+				"secondary text": "rgba(255,255,255,0.7)",
+				"icons": "#ffffff",
+				"disabled": "rgba(255,255,255,0.3)",
+				"hint text": "rgba(255,255,255,0.3)",
+				"dividers": "rgba(255,255,255,0.12)"
+		}
+}

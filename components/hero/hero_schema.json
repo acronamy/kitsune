@@ -1,0 +1,18 @@
+{
+	"selector":{
+		"skinny":"skinny",
+		"small":"small",
+		"default":"hero",
+		"large":"large",
+		"full":"full"
+	},
+	"sizes":{
+		"skinny":"10%",
+		"small":"33.3%",
+		"default":"50%",
+		"large":"75%",
+		"full":"100%"
+	},
+	"flexbox":true,
+"placeholder":"url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQIW2NkYGAwZmBgOMsABYwwBjYBsEoMFQBQhgIFTA5z/AAAAABJRU5ErkJggg==')"
+}

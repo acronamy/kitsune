@@ -1,0 +1,6 @@
+{
+	"selector":{
+		"default":"card",
+		"dark":"dark"
+	}
+}

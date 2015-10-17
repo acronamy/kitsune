@@ -24,6 +24,7 @@
 	"selector":{
 		"container":"container",
 		"fluid_container":"container-fluid",
-		"row_reset":"row"
-	}
+		"reset_row":"row-reset"
+	},
+	"container":980
 }
