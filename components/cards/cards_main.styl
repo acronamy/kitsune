@@ -1,12 +1,65 @@
 use = json('./cards_schema.json',{hash:true})
 
+header_footer(bg_color)
+	header,
+	.header
+		border-top-left-radius:use.config.roundness;
+		border-top-right-radius:use.config.roundness;
+		background-color:bg_color;
+		border-bottom:@border;
+		clearfix()
+		padding:@padding;
+		margin:-(@padding);
+		margin-bottom:@padding;
+	footer,
+	.footer
+		border-bottom-left-radius:use.config.roundness;
+		border-bottom-right-radius:use.config.roundness;
+		border-top:@border;
+		background-color:bg_color;
+		clearfix()
+		padding:@padding;
+		margin:-(@padding);
+		margin-top:@padding;
+
 +set("default")
+	clearfix()
 	margin:1.2em 0;
-	padding:1.2em;
-	border-radius:em(3px);
+	padding:use.config.padding;
+	border-radius:use.config.roundness;
 	background-color:#fff;
 	border:rem(1px) solid #e6e6e6;
+	header_footer(#fafafa)
 	&.{use.selector.dark}
-		background-color:#37404f;
+		background-color:use.color.dark;
 		color:auto;
 		border:rem(1px) solid invert(#e6e6e6);
+		header_footer(darken(use.color.dark,10%))
+	&.{use.selector.muted}
+		background-color:use.color.muted;
+		color:auto;
+		header_footer(use.color.muted)
+	&.{use.selector.primary}
+		background-color:lighten(use.color.primary,use.config.color_saturation_level);
+		color:auto;
+		header_footer(lighten(@background-color,10%))
+		border:0;
+	&.{use.selector.informative}
+		background-color:lighten(use.color.informative,use.config.color_saturation_level);
+		color:auto;
+		header_footer(lighten(@background-color,10%))
+		border:0;
+	&.{use.selector.warning}
+		background-color:lighten(use.color.warning,use.config.color_saturation_level);
+		color:auto;
+		header_footer(lighten(@background-color,10%))
+		border:0;
+	&.{use.selector.danger}
+		background-color:lighten(use.color.danger,use.config.color_saturation_level);
+		color:auto;
+		header_footer(lighten(@background-color,10%))
+		border:0;
+	&.{use.selector.transparent}
+		background-color:use.color.transparent;
+		if !use.config.transparent_inherit_border
+			border:0;

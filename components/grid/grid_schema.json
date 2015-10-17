@@ -1,7 +1,9 @@
 {
 	"config":{
 		"nth":12,
-		"padding":20
+		"padding":20,
+		"page_color":"#fff",
+		"page_border":"#E6E6E6"
 	},
 	"keywords":{
 		"xs":"mobile",
@@ -24,7 +26,13 @@
 	"selector":{
 		"container":"container",
 		"fluid_container":"container-fluid",
-		"reset_row":"row-reset"
+		"reset_row":"row-reset",
+		"page":"page",
+		"dark":"dark"
+	},
+	"colors":{
+		"default":"#fff",
+		"dark":"#37404f"
 	},
 	"container":980
 }

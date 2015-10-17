@@ -1,6 +1,28 @@
 {
 	"selector":{
 		"default":"card",
-		"dark":"dark"
+		"dark":"dark",
+		"muted":"muted",
+		"transparent":"trans",
+		"primary":"primary",
+		"informative":"info",
+		"warning":"warn",
+		"danger":"danger"
+	},
+	"color":{
+		"default":"#fff",
+		"dark":"#37404f",
+		"muted":"#f5f5f5",
+		"primary":"#4074c3",
+		"informative":"#6aad28",
+		"warning":"#EF6C00",
+		"danger":"#D84315",
+		"transparent":"rgba(255,255,255,0)"
+	},
+	"config":{
+		"transparent_inherit_border":true,
+		"color_saturation_level":"66.6%",
+		"padding":"20px",
+		"roundness":"3px"
 	}
 }

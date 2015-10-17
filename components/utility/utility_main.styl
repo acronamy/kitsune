@@ -5,6 +5,13 @@ normalize()
 html
 	box-sizing-reset()
 
+.pull-right
+	float:right;
+.pull-left
+	float:left;
+.pull-reset
+	float:none;
+
 color()
 	if arguments == auto
 		if round(luminosity(@background||@background-color)) == 1

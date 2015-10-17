@@ -16,7 +16,9 @@
 	"config":{
 		"roundness":"3px",
 		"padding":".3em 1.2em",
-		"border_default_color":"#c5c5c5"
+		"border_default_color":"#c5c5c5",
+		"ghost_border_size":"2px",
+		"flexbox":true
 	},
 	"color":{
 		"default":"#f5f5f5",

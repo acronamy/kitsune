@@ -10,11 +10,11 @@
 			li.active
 				a(href='#') Foo
 			li
-				a(href='#') Foo
+				a(href='#') Bar
 			li
-				a(href='#') Foo
+				a(href='#') Thnder
 			li
-				a(href='#') Foo
+				a(href='#') Flash
 
 .hero.large.shade
 	.container
@@ -26,16 +26,21 @@
 
 .container
 	.row-reset
+		.col-md-12
+			h4 Typography.
 		.col-md-6
-			h1 Heading H1.
-			h2 Heading H2.
-			h3 Heading H3.
-			h4 Heading H4.
-			h5 Heading H5.
+			.card
+				h1 Heading H1.
+				h2 Heading H2.
+				h3 Heading H3.
+				h4 Heading H4.
+				h5 Heading H5.
 		.col-md-6
-			p
-				|Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-			a(href='#') Foo
+			.card
+				p
+					|Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				a(href='#') Foo
+
 		header.col-md-12
 			h4 Image prototyping.
 		.col-md-3
@@ -47,7 +52,7 @@
 		.col-md-3
 			img.tri
 .container
-	h4 Buttons
+	h4 Buttons.
 	.card
 		h5 Normal
 		button.btn(type='button') Cancel
@@ -76,7 +81,7 @@
 		button.btn.info.ghost(type='button') Informative
 		button.btn.warn.ghost(type='button') Warning
 		button.btn.danger.ghost(type='button') Danger
-	h4 Button Groups
+	h4 Button Groups.
 	.card
 		h5 Normal
 		.btn-group
@@ -90,10 +95,81 @@
 			button.btn(type='button') Left
 			button.btn(type='button') Center
 			button.btn(type='button') Right
+	.card
+		h5 Round Ghost
+		.btn-group.round
+			button.btn.ghost(type='button') Left
+			button.btn.ghost(type='button') Center
+			button.btn.ghost(type='button') Right
 
 .container
 	.row-reset
-		.col-md-6
-			h4 Cards and Buckets
+		.col-md-12
+			h4 Cards and Buckets.
+		.row-reset
+			.col-md-4
+				.card
+					h5 Normal
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.primary.pull-right Okay
+			.col-md-4
+				.card.trans
+					h5 Trans
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.pull-right Okay
+			.col-md-4
+				.card.muted
+					h5 Muted
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.pull-right Okay
+		.row-reset
+			.col-md-4
+				.card.dark
+					h5 Dark
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.primary.pull-right Okay
+			.col-md-4
+				.card.primary
+					h5 Primary
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.primary.pull-right Okay
+			.col-md-4
+				.card.info
+					h5 Informative
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.info.pull-right Okay
+		.row-reset
+			.col-md-4
+				.card.warn
+					h5 Warning
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.warn.pull-right foo
+			.col-md-4
+				.card.danger
+					h5 Danger
+					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					button.btn.danger.pull-right Okay
+		.col-md-12
 			.card
-				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+				header
+					h5 Panel header footer
+				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				footer
+					button.btn.trans.primary.pull-right Okay
+					button.btn.trans.primary.pull-right Cancel
+		.col-md-6
+			.card.dark
+				header
+					h4 Panel header footer
+				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				footer
+					button.btn.trans.primary.pull-right Okay
+					button.btn.trans.primary.pull-right Cancel
+		.col-md-6
+			.card.warn
+				header
+					h4 Panel header footer
+				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				footer
+					button.btn.trans.primary.pull-right Okay
+					button.btn.trans.primary.pull-right Cancel

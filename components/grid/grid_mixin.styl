@@ -1,47 +1,48 @@
-use = json('grid_schema.json',{hash:true})
+grid_use = json('grid_schema.json',{hash:true})
+use = grid_use
 
 col(unit=1)
-	if unit >= use.config.nth
-		unit = use.config.nth
-	base = unit(100/use.config.nth,"%")
+	if unit >= grid_use.config.nth
+		unit = grid_use.config.nth
+	base = unit(100/grid_use.config.nth,"%")
 	width:base * unit;
-	padding-left: unit(use.config.padding,"px");
-	padding-right: unit(use.config.padding,"px");
+	padding-left: unit(grid_use.config.padding,"px");
+	padding-right: unit(grid_use.config.padding,"px");
 	box-sizing:border-box;
 	float:left;
 	min-height:1px;
 	position: relative;
 
 col-offset(unit=1)
-	if unit >= use.config.nth
-		unit = use.config.nth
-	base = unit(100/use.config.nth,"%")
+	if unit >= grid_use.config.nth
+		unit = grid_use.config.nth
+	base = unit(100/grid_use.config.nth,"%")
 	margin-left:base * unit;
 	float:left;
 
 media(keyword=String(keyword))
 	&
-		if keyword == use.keywords.xs
-			@media screen and (min-width:unit(use.media.xs,"px"))
+		if keyword == grid_use.keywords.xs
+			@media screen and (min-width:unit(grid_use.media.xs,"px"))
 				{block}
 	&
-		if keyword == use.keywords.sm
-			@media screen and (min-width:unit(use.media.sm,"px"))
+		if keyword == grid_use.keywords.sm
+			@media screen and (min-width:unit(grid_use.media.sm,"px"))
 				{block}
 	&
-		if keyword == use.keywords.md
-			@media screen and (min-width:unit(use.media.md,"px"))
+		if keyword == grid_use.keywords.md
+			@media screen and (min-width:unit(grid_use.media.md,"px"))
 				{block}
 	&
-		if keyword == use.keywords.lg
-			@media screen and (min-width:unit(use.media.lg,"px"))
+		if keyword == grid_use.keywords.lg
+			@media screen and (min-width:unit(grid_use.media.lg,"px"))
 				{block}
 
 
 //col
-c_range = 1..use.config.nth
+c_range = 1..grid_use.config.nth
 //xs - to - lg
-for class in use.classes
+for class in grid_use.classes
 	for n in c_range
 		.col-{class}-{n}
 			if class == 'xs'
@@ -58,9 +59,9 @@ for class in use.classes
 					col(n)
 
 //offset
-c_range = 0..use.config.nth
+c_range = 0..grid_use.config.nth
 //xs - to - lg
-for class in use.classes
+for class in grid_use.classes
 	for n in c_range
 		.col-{class}-offset-{n}
 			if class == 'xs'
@@ -77,9 +78,9 @@ for class in use.classes
 					col-offset(n)
 
 //display/hide
-c_range = 0..use.config.nth
+c_range = 0..grid_use.config.nth
 //xs - to - lg
-for class in use.classes
+for class in grid_use.classes
 	for n in c_range
 		.col-{class}-hidden
 			if class == 'xs'
@@ -123,21 +124,27 @@ for class in use.classes
 					display:none;
 
 //expose with other components
-grid_container_width = unit(use.container,'px')
+grid_container_width = unit(grid_use.container,'px')
 grid_container_fluid_width = unit(100,"%")
 baseline_row = 25
 
 container_common()
+	&.{grid_use.selector.page}
+		background-color:grid_use.colors.default;
+		border:rem(1px) solid grid_use.config.page_border;
+		&.{grid_use.selector.dark}
+			background-color:grid_use.colors.dark;
+			border:rem(1px) solid invert(grid_use.config.page_border);
 	clear:both;
 	clearfix()
 	min-height:1px;
 	position:relative;
 	display:block;
-	padding-left: unit(use.config.padding,"px");
-	padding-right: unit(use.config.padding,"px");
+	padding-left: unit(grid_use.config.padding,"px");
+	padding-right: unit(grid_use.config.padding,"px");
 	+set("reset_row")
-		margin-left: -(unit(use.config.padding,"px"));
-		margin-right: -(unit(use.config.padding,"px"));
+		margin-left: -(unit(grid_use.config.padding,"px"));
+		margin-right: -(unit(grid_use.config.padding,"px"));
 
 make_container(mode='default')
 	container_common()
@@ -145,7 +152,7 @@ make_container(mode='default')
 	if mode == "fluid"
 		width:100%;
 	else
-		max-width:unit(use.container,'px');
+		max-width:unit(grid_use.container,'px');
 
 //aliased selectors
 +set("reset_row")

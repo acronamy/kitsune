@@ -25,7 +25,7 @@ use = json('./button_schema.json',{hash:true})
 		&.{use.selector.ghost}
 			color:@background-color;
 			background-color:use.color.transparent;
-			border:rem(2px) solid;
+			border:rem(use.config.ghost_border_size) solid;
 	&.{use.selector.informative}
 		color:auto;
 		background-color:use.color.informative;
@@ -80,9 +80,13 @@ use = json('./button_schema.json',{hash:true})
 
 //button group for children
 +set("group_default")
+	white-space:nowrap;
 	+set("default")
 		border-radius:0;
 		border-left:0;
+		&.{use.selector.ghost}
+				border-right:0;
+				box-shadow:none;
 		&:first-child
 			border-left:rem(1px) solid use.config.border_default_color;
 			border-top-left-radius:rem(use.config.roundness);
@@ -90,12 +94,17 @@ use = json('./button_schema.json',{hash:true})
 			&.{use.selector.round}
 				border-top-left-radius:9999em;
 				border-bottom-left-radius:@border-top-left-radius;
+				&.{use.selector.ghost}
+					border-left:rem(use.config.ghost_border_size) solid;
 		&:last-child
 			border-top-right-radius:rem(use.config.roundness);
 			border-bottom-right-radius:@border-top-right-radius;
 			&.{use.selector.round}
 				border-top-right-radius:9999em;
 				border-bottom-right-radius:@border-top-right-radius;
+				&.{use.selector.ghost}
+					border-right:rem(use.config.ghost_border_size) solid;
+
 //parent .round
 +set("group_default")
 	&.{use.selector.round}
@@ -103,14 +112,24 @@ use = json('./button_schema.json',{hash:true})
 			&:first-child
 				border-top-left-radius:9999em;
 				border-bottom-left-radius:@border-top-left-radius;
+				&.{use.selector.ghost}
+					border-left:rem(use.config.ghost_border_size) solid;
 			&:last-child
 				border-top-right-radius:9999em;
 				border-bottom-right-radius:@border-top-right-radius;
+				&.{use.selector.ghost}
+					border-right:rem(use.config.ghost_border_size) solid;
 
 
 
-//navbar menu toggle
 .menu-toggle
+	+media(tablet)
+		display:none;
+
+.menu-toggle
+	margin:auto 0;
+	display:inline-block;
+	float:left;
 	max-height:initial;
 	height:initial;
 	width:rem(50px);
@@ -122,7 +141,8 @@ use = json('./button_schema.json',{hash:true})
 		background-color:#000;
 		.crossbar
 			margin-top:0;
-	+try('display','flex',true)
+	+try('display','flex',use.config.flexbox)
+		margin:0;
 		display:flex;
 		flex-direction:column;
 		align-items:center;
