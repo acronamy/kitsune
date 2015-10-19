@@ -1,0 +1,43 @@
+use = json('./cards_schema.json',{hash:true})
+
++set("bucket_wrapper")
+	display:flex;
+	&.square-5
+		+set("bucket")
+			padding-bottom:20%;
+	&.square-4
+		+set("bucket")
+			padding-bottom:25%;
+	&.square-3
+		+set("bucket")
+			padding-bottom:33.3%;
+	&.square-2
+		+set("bucket")
+			padding-bottom:50%;
+	&.square-1
+		+set("bucket")
+			padding-bottom:100%;
+	+set("bucket")
+		background-position:center center;
+		background-repeat:no-repeat;
+		background-size:120%;
+		max-width:100%;
+		min-width:25%;
+		flex:1;
+		height:0;
+		&:empty
+			background-color:#fafafa;
+			border-top:1px magenta solid;
+			border-right:1px magenta solid;
+			&:last-child
+				border-right:0;
+		&:nth-child(odd)
+			&:empty
+				background-size:initial;
+				background-repeat:repeat;
+				background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAN0lEQVQYV2NkIAwkGQmokWRgYHiOTxFYAcgQXIrgCnApQlGATRGGAnRFWBUgK8KpAKYIrwKQIgCsKwgjXLko6AAAAABJRU5ErkJggg==');
+		&:nth-child(even)
+				&:empty
+					background-size:initial;
+					background-repeat:repeat;
+					background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAOUlEQVQYV2NkYGCQZGBgeM6ABzBC5fAqhCkCqcWpEFkRToXoirAqxKYIQyEuRSgK8SmCKySkCKwQALdSCCOYxTJsAAAAAElFTkSuQmCC');

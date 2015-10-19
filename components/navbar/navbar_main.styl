@@ -109,12 +109,14 @@ navbar_variation()
 +set("stub")
 	navbar(use.size.medium)
 	navbar_variation()
-	width:grid_container_width;
+	max-width:grid_container_width;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:rem(unit(baseline_row,'px'));
 	margin-bottom:rem(unit(baseline_row,'px'));
-	border-radius:rem(unit(use.roundness,'px'));
+	+media(tablet)
+		border-radius:rem(unit(use.roundness,'px'));
+
 
 if use.accent_bar.enabled
 	html
@@ -150,8 +152,8 @@ if use.accent_bar.enabled
 				padding-right:@padding-left;
 				&.active
 					background-image: linear-gradient( to top, use.color.active_accent, use.color.active_accent)
-					background-repeat-y:no-repeat;
-					background-size:rem(use.active_accent.size+1px);
+					background-repeat:no-repeat;
+					background-size:100% rem(5px);
 					background-position:bottom;
 				&:hover,
 				&.active

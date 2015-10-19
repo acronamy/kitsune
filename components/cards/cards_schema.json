@@ -7,7 +7,9 @@
 		"primary":"primary",
 		"informative":"info",
 		"warning":"warn",
-		"danger":"danger"
+		"danger":"danger",
+		"bucket":"bucket",
+		"bucket_wrapper":"bucket-card"
 	},
 	"color":{
 		"default":"#fff",
@@ -24,5 +26,8 @@
 		"color_saturation_level":"66.6%",
 		"padding":"20px",
 		"roundness":"3px"
+	},
+	"buckets":{
+		"enabled":false
 	}
 }

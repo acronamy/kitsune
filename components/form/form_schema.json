@@ -1,0 +1,24 @@
+{
+	"selector":{
+
+	},
+	"common":{
+		"input_border":"#A7A7A7",
+		"max_width":"36em",
+		"roundness":"rem(3px)",
+		"padding":".43em 1.2em"
+	},
+	"color":{
+
+	},
+	"checkbox_radio":{
+		"box_size":"22px",
+		"checkbox_roundness":"3px",
+		"radio_roundness":"9999em",
+		"radio_shade":"#dedede",
+		"radio_fill_color":"#666666"
+	},
+	"text_field":{
+		"text_area_resize":"vertical"
+	}
+}

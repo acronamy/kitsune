@@ -1,0 +1,21 @@
+use = json('./form_schema.json',{hash:true})
+
+input[type='text'],
+input[type='password'],
+input[type='search']
+	border-radius:use.common.roundness;
+	border:1px solid use.common.input_border;
+	padding:use.common.padding;
+	max-width:use.common.max_width;
+	width:100%;
+	box-sizing:border-box;
+
+
+textarea
+	resize:use.text_field.text_area_resize;
+	max-width:use.common.max_width;
+	width:100%;
+	min-height:em(250px);
+	border-radius:use.common.roundness;
+	border:1px solid use.common.input_border;
+	padding:use.common.padding;

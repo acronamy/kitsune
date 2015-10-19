@@ -6,11 +6,11 @@ col(unit=1)
 		unit = grid_use.config.nth
 	base = unit(100/grid_use.config.nth,"%")
 	width:base * unit;
-	padding-left: unit(grid_use.config.padding,"px");
-	padding-right: unit(grid_use.config.padding,"px");
+	padding-left:rem(unit(grid_use.config.padding,"px"));
+	padding-right:rem(unit(grid_use.config.padding,"px"));
 	box-sizing:border-box;
 	float:left;
-	min-height:1px;
+	min-height:rem(1px);
 	position: relative;
 
 col-offset(unit=1)
@@ -140,8 +140,8 @@ container_common()
 	min-height:1px;
 	position:relative;
 	display:block;
-	padding-left: unit(grid_use.config.padding,"px");
-	padding-right: unit(grid_use.config.padding,"px");
+	padding-left: rem(unit(grid_use.config.padding,"px"));
+	padding-right: rem(unit(grid_use.config.padding,"px"));
 	+set("reset_row")
 		margin-left: -(unit(grid_use.config.padding,"px"));
 		margin-right: -(unit(grid_use.config.padding,"px"));

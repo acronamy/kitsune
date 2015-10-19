@@ -21,11 +21,12 @@ header_footer(bg_color)
 		padding:@padding;
 		margin:-(@padding);
 		margin-top:@padding;
+		color:auto;
 
 +set("default")
 	clearfix()
 	margin:1.2em 0;
-	padding:use.config.padding;
+	padding:em(use.config.padding);
 	border-radius:use.config.roundness;
 	background-color:#fff;
 	border:rem(1px) solid #e6e6e6;
@@ -63,3 +64,6 @@ header_footer(bg_color)
 		background-color:use.color.transparent;
 		if !use.config.transparent_inherit_border
 			border:0;
+
+if use.buckets.enabled
+	@import 'buckets_main.styl'

@@ -29,79 +29,100 @@
 		.col-md-12
 			h4 Typography.
 		.col-md-6
-			.card
 				h1 Heading H1.
 				h2 Heading H2.
 				h3 Heading H3.
 				h4 Heading H4.
 				h5 Heading H5.
 		.col-md-6
-			.card
 				p
 					|Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 				a(href='#') Foo
 
 		header.col-md-12
 			h4 Image prototyping.
-		.col-md-3
-			img
-		.col-md-3
-			img.round
-		.col-md-3
-			img.hex
-		.col-md-3
-			img.tri
+		.col-md-3.col-sm-6.col-xs-6
+			img(src='')
+		.col-md-3.col-sm-6.col-xs-6
+			img.round(src='')
+		.col-md-3.col-sm-6.col-xs-6
+			img.hex(src='')
+		.col-md-3.col-sm-6.col-xs-6
+			img.tri(src='')
 .container
 	h4 Buttons.
-	.card
-		h5 Normal
-		button.btn(type='button') Cancel
-		button.btn.primary(type='button') Primary
-		button.btn.info(type='button') Informative
-		button.btn.warn(type='button') Warning
-		button.btn.danger(type='button') Danger
-	.card
-		h5 Round
-		button.btn.round(type='button') Cancel
-		button.btn.primary.round(type='button') Primary
-		button.btn.info.round(type='button') Informative
-		button.btn.warn.round(type='button') Warning
-		button.btn.danger.round(type='button') Danger
-	.card
-		h5 Transparent
-		button.btn.trans(type='button') Cancel
-		button.btn.primary.trans(type='button') Primary
-		button.btn.info.trans(type='button') Informative
-		button.btn.warn.trans(type='button') Warning
-		button.btn.danger.trans(type='button') Danger
-	.card
-		h5 Ghosts
-		button.btn.ghost(type='button') Cancel
-		button.btn.primary.ghost(type='button') Primary
-		button.btn.info.ghost(type='button') Informative
-		button.btn.warn.ghost(type='button') Warning
-		button.btn.danger.ghost(type='button') Danger
+	.row-reset
+		.col-md-3.text-center
+			.card.trans
+				h5 Normal
+				button.btn(type='button') Cancel
+				button.btn.primary(type='button') Primary
+				button.btn.info(type='button') Informative
+				button.btn.warn(type='button') Warning
+				button.btn.danger(type='button') Danger
+		.col-md-3.text-center
+			.card.trans
+				h5 Round
+				button.btn.round(type='button') Cancel
+				button.btn.primary.round(type='button') Primary
+				button.btn.info.round(type='button') Informative
+				button.btn.warn.round(type='button') Warning
+				button.btn.danger.round(type='button') Danger
+		.col-md-3.text-center
+			.card.trans
+				h5 Transparent
+				button.btn.trans(type='button') Cancel
+				button.btn.primary.trans(type='button') Primary
+				button.btn.info.trans(type='button') Informative
+				button.btn.warn.trans(type='button') Warning
+				button.btn.danger.trans(type='button') Danger
+		.col-md-3.text-center
+			.card.trans
+				h5 Ghosts
+				button.btn.ghost(type='button') Cancel
+				button.btn.primary.ghost(type='button') Primary
+				button.btn.info.ghost(type='button') Informative
+				button.btn.warn.ghost(type='button') Warning
+				button.btn.danger.ghost(type='button') Danger
 	h4 Button Groups.
-	.card
+	.card.trans.col-md-4
 		h5 Normal
 		.btn-group
 			button.btn(type='button') Left
 			button.btn(type='button') Center
 			button.btn(type='button') Right
-	.card
+	.card.trans.col-md-4
 		h5 Round
 		p Supports both .round on parent or child all children.
 		.btn-group.round
 			button.btn(type='button') Left
 			button.btn(type='button') Center
 			button.btn(type='button') Right
-	.card
+	.card.trans.col-md-4
 		h5 Round Ghost
 		.btn-group.round
 			button.btn.ghost(type='button') Left
 			button.btn.ghost(type='button') Center
 			button.btn.ghost(type='button') Right
 
+.container-fluid
+	.row-reset
+		.col-md-12
+			h4 Navbars.
+			.navbar-nav.navbar-skinny
+				h5 Skinny
+			.navbar-nav.navbar-small
+				h5 Small
+			.navbar-nav.navbar-medium
+				h5 Default
+			.navbar-nav.navbar-large
+				h5 Large
+			.navbar-nav.inverse.navbar-small
+				h5 Inverse
+			.navbar-nav.trans.navbar-small
+				h5 Transparent
+			.navbar-short.navbar-small
+				h5 Short Navbar
 .container
 	.row-reset
 		.col-md-12
@@ -114,7 +135,7 @@
 					button.btn.primary.pull-right Okay
 			.col-md-4
 				.card.trans
-					h5 Trans
+					h5 Transparent
 					p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 					button.btn.pull-right Okay
 			.col-md-4
@@ -163,13 +184,68 @@
 					h4 Panel header footer
 				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 				footer
-					button.btn.trans.primary.pull-right Okay
-					button.btn.trans.primary.pull-right Cancel
+					.btn-group.pull-right
+						button.btn Cancel
+						button.btn.primary Okay
 		.col-md-6
-			.card.warn
+			.card.info
 				header
 					h4 Panel header footer
 				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 				footer
 					button.btn.trans.primary.pull-right Okay
 					button.btn.trans.primary.pull-right Cancel
+//Experimental
+//.bucket-card.square-4.scale-up
+//	.bucket
+//	.bucket
+//	.bucket
+//	.bucket
+//.bucket-card.square-3
+//	.bucket
+//	.bucket
+//	.bucket
+//.bucket-card.square-2
+//	.bucket
+//	.bucket
+
+.container
+	form
+		.control
+			input(type='text' placeholder='Text')
+		.control
+			input(type='password' placeholder='Password')
+		.control
+			input(type='search' placeholder='Search')
+		.control
+			button.btn(type='Submit') Submit
+		.control
+			label(for='radio-1')
+				input.radio(type='radio' name='foo' id='radio-1')
+				span.draw-radio
+				p Label 1 and psudo radio
+			label(for='radio-2')
+				input.radio(type='radio' name='foo' id='radio-2')
+				span.draw-radio
+				p Label 2 and psudo radio
+			label(for='radio-3')
+				input.radio(type='radio' name='foo' id='radio-3')
+				span.draw-radio
+				p Label 3 and psudo radio
+		.control
+			label(for='checkbox-1')
+				input.checkbox(type='checkbox' id='checkbox-1')
+				span.draw-checkbox
+				p Label 3 and psudo checkbox
+			label(for='checkbox-2')
+				input.checkbox(type='checkbox' id='checkbox-2')
+				span.draw-checkbox
+				p Label 3 and psudo checkbox
+			label(for='checkbox-3')
+				input.checkbox(type='checkbox' id='checkbox-3')
+				span.draw-checkbox
+				p Label 3 and psudo checkbox
+		.control
+			textarea
+		.range-control
+			input(type='range')
