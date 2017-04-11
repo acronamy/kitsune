@@ -1,5 +1,5 @@
 {
-	"component_list":[
+	"component_list": [
 		"utility",
 		"grid",
 		"typography",
@@ -18,36 +18,56 @@
 		"cards",
 		"sounds"
 	],
-	"convention_schema":{
-		"component":{
-			"files":{
-				"local_schema":"@{component}_schema.json",
-				"main":"@{component}_main.styl",
-				"readme":"@{component}_readme.md"
+	"convention_schema": {
+		"component": {
+			"files": {
+				"local_schema": "@{component}_schema.json",
+				"main": "@{component}_main.styl",
+				"readme": "@{component}_readme.md"
 			},
-			"folders":["scripts","example"],
-			"font_components":["typography","icons"]
+			"folders": [
+				"scripts",
+				"example"
+			],
+			"font_components": [
+				"typography",
+				"icons"
+			]
 		},
-		"core":["components","utilities","dist","core"],
-		"dist":{
-			"folders":["scripts","styles"],
-			"styles":{
-				"folders":["compressed","uncompressed"]
+		"core": [
+			"components",
+			"utilities",
+			"dist",
+			"core"
+		],
+		"dist": {
+			"folders": [
+				"scripts",
+				"styles"
+			],
+			"styles": {
+				"folders": [
+					"compressed",
+					"uncompressed"
+				]
 			},
-			"scripts":{
-				"folders":["compressed","uncompressed"]
+			"scripts": {
+				"folders": [
+					"compressed",
+					"uncompressed"
+				]
 			}
 		}
 	},
-	"features":{
-		"build":true,
-		"dev_server":true,
-		"watch":true
+	"features": {
+		"build": true,
+		"dev_server": true,
+		"watch": false
 	},
-	"path":{
-		"dist":"./dist",
-		"src":"./components",
-		"core":"./core",
-		"kitsune_style":"./core/kitsune.styl"
+	"path": {
+		"dist": "./dist",
+		"src": "./components",
+		"core": "./core",
+		"kitsune_style": "./core/kitsune.styl"
 	}
 }

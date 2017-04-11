@@ -10,6 +10,13 @@
   "author": "Adam Crockett",
   "license": "ISC",
   "dependencies": {
+    "chokidar": "^1.6.1",
+    "colors": "^1.1.2",
+    "express": "^4.15.2",
+    "jade": "^1.11.0",
+    "kouto-swiss": "^1.1.0",
+    "ncp": "^2.0.0",
+    "stylus": "^0.54.5",
     "stylus-normalize": "^3.0.3"
   }
 }
